@@ -41,7 +41,7 @@ if [ "$RUNFSRECONALL" = true ] ; then
     cmd="${SINGULARITY_CMD} \
     --participant-label $subject \
     --force-syn \
-    --fs-license-file /data/derivatives/license.txt \
+    --fs-license-file ${FS_LICENSE_DIR}/license.txt \
     --bold2t1w-dof 6 --nthreads 8 --omp-nthreads 7 \
     --output-spaces fsaverage6 fsnative anat func MNI152NLin2009cAsym:res-2 MNI152NLin6Asym:res-2 \
     --use-aroma \
