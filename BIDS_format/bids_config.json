@@ -1,0 +1,156 @@
+{
+    "descriptions": [
+	{
+	    "dataType": "anat",
+	    "modalityLabel": "T1w",
+	    "criteria":{		
+	            "SeriesDescription": "t1_mpr_AX_MPRAGE"    
+	    }
+	},
+        {
+	    "dataType": "fmap",
+	    "modalityLabel": "magnitude1",
+	    "IntendedFor": [
+            4,
+	    5,
+	    6,
+	    7,
+	    8,
+	    9,
+	    10,
+	    11
+	    ],
+	    "criteria":{		
+	            "SidecarFilename": "*_e1.json",
+		    "EchoTime": 0.00406    
+	    }
+	},
+	{
+	    "dataType": "fmap",
+	    "modalityLabel": "magnitude2",
+	    "IntendedFor": [
+	    4,
+	    5,
+	    6,
+	    7,
+	    8,
+	    9,
+	    10,
+	    11
+	    ],
+	    "criteria":{		
+	            "SidecarFilename": "*_e2.json",
+                    "EchoTime": 0.00652    
+	    }
+	},
+	{
+	    "dataType": "fmap",
+	    "modalityLabel": "phasediff",
+	    "IntendedFor": [
+	    4,
+	    5,
+	    6,
+	    7,
+	    8,
+	    9,
+	    10,
+	    11
+	    ],
+	    "criteria":{		
+	            "SidecarFilename": "*_ph.json"    
+	    },
+	    "sidecarChanges":{
+	        "EchoTime1": 0.00406,
+	        "EchoTime2": 0.00652				    		
+	    }
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-rest",
+	    "criteria":{		
+	            "SeriesDescription": "BOLD_3.0mm_TR500_mb6_REST"    
+	    },
+		"sidecarChanges": {
+			"TaskName": "rest"
+		}
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-fobs",
+	    "criteria":{
+	            "SeriesDescription": "BOLD_1.5mm_TR2000_mb4_FOBS"
+	    },
+		"sidecarChanges": {
+			"TaskName": "fobs"
+		}
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-size1",
+	    "criteria":{		
+	            "SeriesDescription": "BOLD_1.5mm_TR2000_mb4_SIZE1"    
+	    },
+		"sidecarChanges": {
+			"TaskName": "size1"
+		}
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-learn1",
+	    "criteria":{		
+	            "SeriesDescription": "BOLD_1.5mm_TR2000_mb4_LEARN1"    
+	    },
+		"sidecarChanges": {
+			"TaskName": "learn1"
+		}
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-learn2",
+	    "criteria":{		
+	            "SeriesDescription": "BOLD_1.5mm_TR2000_mb4_LEARN2"    
+	    },
+		"sidecarChanges": {
+			"TaskName": "learn2"
+		}
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-learn3",
+	    "criteria":{		
+	            "SeriesDescription": "BOLD_1.5mm_TR2000_mb4_LEARN3"    
+	    },
+		"sidecarChanges": {
+			"TaskName": "learn3"
+		}
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-size2",
+	    "criteria":{		
+	            "SeriesDescription": "BOLD_1.5mm_TR2000_mb4_SIZE2"    
+	    },
+		"sidecarChanges": {
+			"TaskName": "size2"
+		}
+	},
+	{
+	    "dataType": "func",
+	    "modalityLabel": "bold",
+	    "customLabels": "task-value",
+	    "criteria":{		
+	            "SeriesDescription": "BOLD_1.5mm_TR2000_mb4_VALUE"    
+	    },
+		"sidecarChanges": {
+			"TaskName": "value"
+		}
+	}
+    ]
+}
