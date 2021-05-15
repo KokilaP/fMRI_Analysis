@@ -3,23 +3,21 @@
 % regressors computed during the fmriprep pipeline.
 
 %% SET PARAMETERS
-
-bids_dir = '$BIDS_DIR';
-fmriprep_dir = '$BIDS_DIR/derivatives/fmriprep';
+bids_dir = ''; % Enter $BIDS_DIR
+fmriprep_dir = append(bids_dir, 'derivatives/fmriprep');
 fsl_dir = fullfile(bids_dir,'derivatives','fsl','confounds');
-addpath('$JSONLAB_DIR')
-
+addpath('jsonlab-2.0/jsonlab-2.0')
 
 %% CREATE REGRESSORS
-% sub_dirs = dir(fullfile(bids_dir,'sub-*'));
-%numsubj = numel(sub_dirs);
-numsubj = 20;
-for s=5:numsubj
-    for ses=1:4
+sub_dirs = dir(fullfile(bids_dir,'sub-*'));
+ses_dirs = dir(fullfile(append(bids_dir,sub_dirs(1).name),'ses-*'));
+numsubj = numel(sub_dirs);
+numsess = numel(ses_dirs);
+
+for s=1:numsubj
+    for ses=1:numsess
         disp(sprintf('Subject: %d & Session: %d',s, ses));
-    %     confreg_list = dir(fullfile(fmriprep_dir,sub_dirs(s).name,'func','*confounds_regressors.tsv'));
-        path_substring = sprintf('sub-%02d/ses-%d',s,ses);
-        confreg_list = dir(fullfile(fmriprep_dir,path_substring,'func','*confounds_regressors.tsv'));
+        confreg_list = dir(fullfile(fmriprep_dir,sub_dirs(s).name, ses_dirs(ses).name, 'func','*confounds_regressors.tsv'));
         for r=1:numel(confreg_list) % Loop over runs
             try
                 disp(sprintf('     Run: %d',r));
