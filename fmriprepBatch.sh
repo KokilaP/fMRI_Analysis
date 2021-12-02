@@ -3,7 +3,7 @@
 #SBATCH -o $HOME/log_fmriprep.out
 
 sub=${SLURM_ARRAY_TASK_ID}
-export SCRATCH_DIR="${SPHERE_DIR}/scratch_fmriprep_${sub}"
+export SCRATCH_DIR="${TEMP_DIR}/scratch_fmriprep_${sub}"
 mkdir ${SCRATCH_DIR}
 
 # Compose the command line
